@@ -6,5 +6,5 @@ import java.util.ArrayList;
 
 public interface MessageRespository extends CrudRepository <Message,Long> {
 
-    ArrayList<Message> findByTitle(String title);
+    ArrayList<Message> findByTitleIgnoreCase(String title);
 }

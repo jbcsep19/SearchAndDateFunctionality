@@ -25,7 +25,7 @@ public class HomeController {
     }
     @PostMapping("/processsearch")
     public String searchResult(Model model,@RequestParam(name="search") String search) {
-        model.addAttribute("messages", messageRespository.findByTitle(search));
+        model.addAttribute("messages", messageRespository.findByTitleIgnoreCase(search));
         return "searchlist";
     }
     @PostMapping("/processmessage")

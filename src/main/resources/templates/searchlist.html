@@ -8,7 +8,7 @@
 <h2>Search list</h2>
 <div th:each="message : ${messages}">
     <p th:text="${message.title}"></p>
-    <p th:text="${message.date}"></p>
+    <p th:text="${#dates.format(message.date, 'MM-dd-yyyy')}"></p>
     <p th:text="${message.description}"></p>
 </div>
 </body>
