@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/processsearch}" method="post">
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit">Search</button>
+</form>
+<a href="/add">add</a>
+<h2>All Messages</h2>
+<div th:each="message : ${messages}">
+    <p th:text="${message.title}"></p>
+    <p th:text="${#dates.format(message.date, 'dd-MMM-yyyy')}"></p>
+    <p th:text="${message.description}"></p>
+</div>
+</body>
+</html>
